@@ -1,0 +1,32 @@
+.react-tel-input .form-control {
+  @apply w-full h-10 px-3 py-2 text-base;
+  @apply bg-background border border-input;
+  @apply rounded-md shadow-sm;
+  @apply focus:outline-none focus:ring-2 focus:ring-ring focus:border-input;
+}
+
+.react-tel-input .flag-dropdown {
+  @apply bg-background border border-input;
+  @apply rounded-l-md;
+  @apply hover:bg-accent hover:text-accent-foreground;
+}
+
+.react-tel-input .selected-flag {
+  @apply bg-transparent;
+  @apply rounded-l-md;
+  @apply hover:bg-accent hover:text-accent-foreground;
+}
+
+.react-tel-input .country-list {
+  @apply bg-background border border-input;
+  @apply rounded-md shadow-md;
+  @apply text-foreground;
+}
+
+.react-tel-input .country-list .country:hover {
+  @apply bg-accent text-accent-foreground;
+}
+
+.react-tel-input .country-list .country.highlight {
+  @apply bg-accent text-accent-foreground;
+} 

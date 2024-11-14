@@ -1,5 +1,7 @@
 import "./globals.css"
+import "../styles/phone-input.css"
 import { Heebo } from "next/font/google"
+import { NavBar } from "@/components/nav-bar"
 
 const heebo = Heebo({ 
   subsets: ['hebrew'],
@@ -13,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="he" dir="rtl" suppressHydrationWarning>
-      <body className={heebo.className}>{children}</body>
+      <body className={heebo.className}>
+        <NavBar />
+        {children}
+      </body>
     </html>
   )
 }

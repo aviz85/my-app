@@ -1,35 +1,46 @@
+"use client"
+
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Github, Twitter } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
-    <div className="relative min-h-screen">
-      {/* Background */}
-      <div className="absolute inset-0 -z-10">
+    <div className="flex min-h-screen flex-col">
+      {/* Background Effects */}
+      <div className="absolute inset-0 -z-10 h-full w-full bg-white dark:bg-gray-950">
         <div className="absolute h-full w-full bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]" />
-        <div className="absolute right-1/2 top-0 -z-10 h-[310px] w-[310px] translate-x-1/2 rounded-full bg-primary/20 opacity-20 blur-[100px]" />
+        <div className="absolute left-0 right-0 top-0 -z-10 m-auto h-[310px] w-[310px] rounded-full bg-primary/20 opacity-20 blur-[100px]" />
       </div>
 
-      <main className="relative">
-        {/* Hero Section */}
-        <section className="container px-4 py-24 md:py-32 lg:py-40">
-          <div className="mx-auto max-w-3xl text-center">
-            <h1 className="font-heebo bg-gradient-to-l from-primary to-secondary bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl">
-              מגדירים מחדש
-              <br />
-              את העתיד
-            </h1>
-            <p className="font-heebo mt-6 text-lg leading-8 text-gray-600 dark:text-gray-300">
-              פלטפורמה חדשנית המשלבת טכנולוגיות מתקדמות עם חוויית משתמש יוצאת דופן
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button size="lg" className="font-heebo group">
-                התחל עכשיו
-                <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-              </Button>
-              <Button variant="outline" size="lg" className="font-heebo">
-                גלה עוד
-              </Button>
+      <main className="flex-1">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl/none bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary animate-fade-down">
+                  בונים את העתיד
+                  <span className="block">ביחד</span>
+                </h1>
+                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400 animate-fade-up">
+                  פלטפורמה חדשנית המשלבת טכנולוגיות מתקדמות עם חוויית משתמש יוצאת דופן
+                </p>
+              </div>
+              <div className="space-x-4 relative">
+                <Button 
+                  className="h-11 px-8 bg-primary relative overflow-hidden group"
+                  onClick={() => router.push('/auth')}
+                >
+                  <div className="absolute inset-0 w-full h-full transition-all duration-300 scale-0 group-hover:scale-100 group-hover:bg-white/30 rounded-lg" />
+                  התחל עכשיו
+                  <ArrowLeft className="mr-2" />
+                </Button>
+                <Button variant="outline" className="h-11 px-8 backdrop-blur-sm">
+                  למד עוד
+                </Button>
+              </div>
             </div>
           </div>
         </section>
