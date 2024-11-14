@@ -13,7 +13,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="he" dir="rtl" suppressHydrationWarning>
-      <head />
       <body className={heebo.className}>{children}</body>
     </html>
   )
